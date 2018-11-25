@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+
+<tr>
+<td><h:outputLabel id="userNameOutputId" value="#{label['Registration.userName']}"
+	style="#{userNameInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="userNameInputId" value="#{Registration.userName}" required="true" label="UserName" binding="#{userNameInputId}" requiredMessage="#{vm['Registration.userName.required']}" validatorMessage="#{vm['Registration.userName.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z ]+$" />
+	</h:inputText>
+	<h:message for="userNameInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="passwordOutputId" value="#{label['Registration.password']}"
+	style="#{passwordInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="passwordInputId" value="#{Registration.password}" required="true" label="password" binding="#{passwordInputId}" requiredMessage="#{vm['Registration.password.required']}" validatorMessage="#{vm['Registration.password.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z ]+$" />
+	</h:inputText>
+	<h:message for="passwordInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+
+
+
+
+
+
+</h:body>
+</html>

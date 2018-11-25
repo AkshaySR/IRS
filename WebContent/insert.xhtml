@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Insert Data</title>
+	<style type="text/css">
+
+
+
+a { background-color:#08A31E ; 
+	display:block;
+	width:160px;
+	padding : 5px 22px;
+	text-decoration:none ;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-weight:bold;
+	border-bottom:1px #FCFCFC solid;
+	display:inline;
+}
+
+a:link { color:#F1EEEE; }
+a:visited { color:#F1EEEE ; }
+a:active { color:#F1EEEE ; }
+a:hover { color:#FF0105 ; background-color:#087B07; }
+a:focus { color: #FF0105; }
+
+h2 {
+	color:#F30C10;
+}
+</style>
+</h:head>
+
+<h:body>
+	<f:view>
+	<h:form>
+	<table>
+	<div id ="banner"> 
+            <div id="logo" >
+            
+                <a href="index.jsp"><img src="//lh6.googleusercontent.com/-9tGTtbRe3lw/Uw0M4exukPI/AAAAAAAAA-k/i7pZ7ET5MXY/w431-h95-no/coollogo_com-17789161.png"></img></a>
+            </div>
+            
+  		</div>
+  <div id = "photos">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQcMppJYshYOIxq5rWoGjBhNeOApan1rJTuZS3RliRvCbVs31aj" width="1350" height="175"></img>
+       
+        </div>
+
+	<div id ="toolbar">
+
+        <a href="instructions.xhtml">INSTRUCTIONS</a><h:outputLink value="login.xhtml">logout</h:outputLink> 
+       <h2>1040EZ FORM</h2>
+</div>
+
+<tr>
+<td><h:outputLabel id="firstnameOutputId" value="#{label['userRegistration.firstname']}"
+	style="#{firstnameInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="firstnameInputId" value="#{userRegistration.firstname}" required="false" label="FIRST NAME" binding="#{firstnameInputId}" requiredMessage="#{vm['userRegistration.firstname.required']}" validatorMessage="#{vm['userRegistration.firstname.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z ]+$" />
+	</h:inputText>
+	<h:message for="firstnameInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+
+<tr>
+<td><h:outputLabel id="lastnameOutputId" value="#{label['userRegistration.lastname']}"
+	style="#{lastnameInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="lastnameInputId" value="#{userRegistration.lastname}" required="false" label="LAST NAME" binding="#{lastnameInputId}" requiredMessage="#{vm['userRegistration.lastname.required']}" validatorMessage="#{vm['userRegistration.lastname.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="lastnameInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="ssnId" value="#{label['userRegistration.ssn']}"
+	style="#{ssnInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="ssnInputId" value="#{userRegistration.ssn}" required="false" label="SSN" binding="#{ssnInputId}" requiredMessage="#{vm['userRegistration.ssn.required']}" validatorMessage="#{vm['userRegistration.ssn.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="ssnInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="firstName2Id" value="#{label['userRegistration.firstName2']}"
+	style="#{firstName2InputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="firstName2InputId" value="#{userRegistration.firstName2}" required="false" label="First Name" binding="#{firstName2InputId}" requiredMessage="#{vm['userRegistration.firstName2.required']}" validatorMessage="#{vm['userRegistration.firstName2.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="firstName2InputId" style="color:red"/><br/>	
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="lastname2Id" value="#{label['userRegistration.lastname2']}"
+	style="#{lastname2InputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="lastname2InputId" value="#{userRegistration.lastname2}" required="false" label="Last Name" binding="#{lastname2InputId}" requiredMessage="#{vm['userRegistration.lastname2.required']}" validatorMessage="#{vm['userRegistration.lastname2.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="lastname2InputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="spousessnId" value="#{label['userRegistration.spousessn']}"
+	style="#{spousessnInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="spousessnInputId" value="#{userRegistration.spousessn}" required="false" label="spousessn" binding="#{spousessnInputId}" requiredMessage="#{vm['userRegistration.spousessn.required']}" validatorMessage="#{vm['userRegistration.spousessn.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="spousessnInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="addressId" value="#{label['userRegistration.address']}"
+	style="#{addressInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="addressInputId" value="#{userRegistration.address}" required="false" label="address" binding="#{addressInputId}" requiredMessage="#{vm['userRegistration.address.required']}" validatorMessage="#{vm['userRegistration.address.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="addressInputId" style="color:red"/><br/>	
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="aptnoId" value="#{label['userRegistration.aptno']}"
+	style="#{aptnoInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="aptnoInputId" value="#{userRegistration.aptno}" required="false" label="aptno" binding="#{aptnoInputId}" requiredMessage="#{vm['userRegistration.aptno.required']}" validatorMessage="#{vm['userRegistration.aptno.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="aptnoInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="cityId" value="#{label['userRegistration.city']}"
+	style="#{cityInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="cityInputId" value="#{userRegistration.city}" required="false" label="city" binding="#{cityInputId}" requiredMessage="#{vm['userRegistration.city.required']}" validatorMessage="#{vm['userRegistration.city.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="cityInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="foreigncountrynameId" value="#{label['userRegistration.foreigncountryname']}"
+	style="#{foreigncountrynameInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="foreigncountrynameInputId" value="#{userRegistration.foreigncountryname}" required="false" label="foreigncountryname" binding="#{foreigncountrynameInputId}" requiredMessage="#{vm['userRegistration.foreigncountryname.required']}" validatorMessage="#{vm['userRegistration.foreigncountryname.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="foreigncountrynameInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="foriegnprovinceId" value="#{label['userRegistration.foriegnprovince']}"
+	style="#{foriegnprovinceInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="foriegnprovinceInputId" value="#{userRegistration.foriegnprovince}" required="false" label="foriegnprovince" binding="#{foriegnprovinceInputId}" requiredMessage="#{vm['userRegistration.foriegnprovince.required']}" validatorMessage="#{vm['userRegistration.foriegnprovince.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="foriegnprovinceInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="foriegnpostalcodeId" value="#{label['userRegistration.foriegnpostalcode']}"
+	style="#{foriegnpostalcodeInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="foriegnpostalcodeInputId" value="#{userRegistration.foriegnpostalcode}" required="false" label="foriegnpostalcode" binding="#{foriegnpostalcodeInputId}" requiredMessage="#{vm['userRegistration.foriegnpostalcode.required']}" validatorMessage="#{vm['userRegistration.foriegnpostalcode.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="foriegnpostalcodeInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="wagesId" value="#{label['userRegistration.wages']}"
+	style="#{wagesInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="wagesInputId" value="#{userRegistration.wages}" required="false" label="wages" binding="#{wagesInputId}" requiredMessage="#{vm['userRegistration.wages.required']}" validatorMessage="#{vm['userRegistration.wages.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="wagesInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="taxableinterestId" value="#{label['userRegistration.taxableinterest']}"
+	style="#{taxableinterestInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="taxableinterestInputId" value="#{userRegistration.taxableinterest}" required="false" label="taxableinterest" binding="#{taxableinterestInputId}" requiredMessage="#{vm['userRegistration.taxableinterest.required']}" validatorMessage="#{vm['userRegistration.taxableinterest.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="taxableinterestInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="unemploymentId" value="#{label['userRegistration.unemployment']}"
+	style="#{unemploymentInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="unemploymentInputId" value="#{userRegistration.unemployment}" required="false" label="unemployment" binding="#{unemploymentInputId}" requiredMessage="#{vm['userRegistration.unemployment.required']}" validatorMessage="#{vm['userRegistration.unemployment.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="unemploymentInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="adjustedgrossincomeId" value="#{label['userRegistration.adjustedgrossincome']}"
+	style="#{adjustedgrossincomeInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="adjustedgrossincomeInputId" value="#{userRegistration.adjustedgrossincome}" required="false" label="adjustedgrossincome" binding="#{adjustedgrossincomeInputId}" requiredMessage="#{vm['userRegistration.adjustedgrossincome.required']}" validatorMessage="#{vm['userRegistration.adjustedgrossincome.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="adjustedgrossincomeInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="filingjointlyId" value="#{label['userRegistration.filingjointly']}"
+	style="#{filingjointlyInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="filingjointlyInputId" value="#{userRegistration.filingjointly}" required="false" label="filingjointly" binding="#{filingjointlyInputId}" requiredMessage="#{vm['userRegistration.filingjointly.required']}" validatorMessage="#{vm['userRegistration.filingjointly.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="filingjointlyInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="taxableincomeId" value="#{label['userRegistration.taxableincome']}"
+	style="#{taxableincomeInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="taxableincomeInputId" value="#{userRegistration.taxableincome}" required="false" label="taxableincome" binding="#{taxableincomeInputId}" requiredMessage="#{vm['userRegistration.taxableincome.required']}" validatorMessage="#{vm['userRegistration.taxableincome.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="taxableincomeInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="fedralincomeId" value="#{label['userRegistration.fedralincome']}"
+	style="#{fedralincomeInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="fedralincomeInputId" value="#{userRegistration.fedralincome}" required="false" label="fedralincome" binding="#{fedralincomeInputId}" requiredMessage="#{vm['userRegistration.fedralincome.required']}" validatorMessage="#{vm['userRegistration.fedralincome.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="fedralincomeInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="EICId" value="#{label['userRegistration.EIC']}"
+	style="#{EICInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="EICInputId" value="#{userRegistration.EIC}" required="false" label="EIC" binding="#{EICInputId}" requiredMessage="#{vm['userRegistration.EIC.required']}" validatorMessage="#{vm['userRegistration.EIC.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="EICInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="nontaxableId" value="#{label['userRegistration.nontaxable']}"
+	style="#{nontaxableInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="nontaxableInputId" value="#{userRegistration.nontaxable}" required="false" label="nontaxable" binding="#{nontaxableInputId}" requiredMessage="#{vm['userRegistration.nontaxable.required']}" validatorMessage="#{vm['userRegistration.nontaxable.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="nontaxableInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="totalpaymentsId" value="#{label['userRegistration.totalpayments']}"
+	style="#{totalpaymentsInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="totalpaymentsInputId" value="#{userRegistration.totalpayments}" required="false" label="totalpayments" binding="#{totalpaymentsInputId}" requiredMessage="#{vm['userRegistration.totalpayments.required']}" validatorMessage="#{vm['userRegistration.totalpayments.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="totalpaymentsInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="taxtableId" value="#{label['userRegistration.taxtable']}"
+	style="#{taxtableInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="taxtableInputId" value="#{userRegistration.taxtable}" required="false" label="taxtable" binding="#{taxtableInputId}" requiredMessage="#{vm['userRegistration.taxtable.required']}" validatorMessage="#{vm['userRegistration.taxtable.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="taxtableInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="refundId" value="#{label['userRegistration.refund']}"
+	style="#{refundInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="refundInputId" value="#{userRegistration.refund}" required="false" label="refund" binding="#{refundInputId}" requiredMessage="#{vm['userRegistration.refund.required']}" validatorMessage="#{vm['userRegistration.refund.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="refundInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="routingnumberId" value="#{label['userRegistration.routingnumber']}"
+	style="#{routingnumberInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="routingnumberInputId" value="#{userRegistration.routingnumber}" required="false" label="routingnumber" binding="#{routingnumberInputId}" requiredMessage="#{vm['userRegistration.routingnumber.required']}" validatorMessage="#{vm['userRegistration.routingnumber.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="routingnumberInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="accountnumberId" value="#{label['userRegistration.accountnumber']}"
+	style="#{accountnumberInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="accountnumberInputId" value="#{userRegistration.accountnumber}" required="false" label="accountnumber" binding="#{accountnumberInputId}" requiredMessage="#{vm['userRegistration.accountnumber.required']}" validatorMessage="#{vm['userRegistration.accountnumber.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="accountnumberInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="amountoweId" value="#{label['userRegistration.amountowe']}"
+	style="#{amountoweInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="amountoweInputId" value="#{userRegistration.amountowe}" required="false" label="amountowe" binding="#{amountoweInputId}" requiredMessage="#{vm['userRegistration.amountowe.required']}" validatorMessage="#{vm['userRegistration.amountowe.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="amountoweInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="designeesnameId" value="#{label['userRegistration.designeesname']}"
+	style="#{designeesnameInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="designeesnameInputId" value="#{userRegistration.designeesname}" required="false" label="designeesname" binding="#{designeesnameInputId}" requiredMessage="#{vm['userRegistration.designeesname.required']}" validatorMessage="#{vm['userRegistration.designeesname.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="designeesnameInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="phonenoId" value="#{label['userRegistration.phoneno']}"
+	style="#{phonenoInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="phonenoInputId" value="#{userRegistration.phoneno}" required="false" label="phoneno" binding="#{phonenoInputId}" requiredMessage="#{vm['userRegistration.phoneno.required']}" validatorMessage="#{vm['userRegistration.phoneno.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="phonenoInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="pinId" value="#{label['userRegistration.pin']}"
+	style="#{pinInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="pinInputId" value="#{userRegistration.pin}" required="false" label="pin" binding="#{pinInputId}" requiredMessage="#{vm['userRegistration.pin.required']}" validatorMessage="#{vm['userRegistration.pin.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="pinInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="dateId" value="#{label['userRegistration.date']}"
+	style="#{dateInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="dateInputId" value="#{userRegistration.date}" required="false" label="date" binding="#{dateInputId}" requiredMessage="#{vm['userRegistration.date.required']}" validatorMessage="#{vm['userRegistration.date.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="dateInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="occupationId" value="#{label['userRegistration.occupation']}"
+	style="#{occupationInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="occupationInputId" value="#{userRegistration.occupation}" required="false" label="occupation" binding="#{occupationInputId}" requiredMessage="#{vm['userRegistration.occupation.required']}" validatorMessage="#{vm['userRegistration.occupation.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="occupationInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="daytimephonenumberId" value="#{label['userRegistration.daytimephonenumber']}"
+	style="#{daytimephonenumberInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="daytimephonenumberInputId" value="#{userRegistration.daytimephonenumber}" required="false" label="daytimephonenumber" binding="#{daytimephonenumberInputId}" requiredMessage="#{vm['userRegistration.daytimephonenumber.required']}" validatorMessage="#{vm['userRegistration.daytimephonenumber.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="daytimephonenumberInputId" style="color:red"/><br/>	
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="spousesignId" value="#{label['userRegistration.spousesign']}"
+	style="#{spousesignInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="spousesignInputId" value="#{userRegistration.spousesign}" required="false" label="spousesign" binding="#{spousesignInputId}" requiredMessage="#{vm['userRegistration.spousesign.required']}" validatorMessage="#{vm['userRegistration.spousesign.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="spousesignInputId" style="color:red"/><br/>	
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="datenewId" value="#{label['userRegistration.datenew']}"
+	style="#{datenewInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="datenewInputId" value="#{userRegistration.datenew}" required="false" label="datenew" binding="#{datenewInputId}" requiredMessage="#{vm['userRegistration.datenew.required']}" validatorMessage="#{vm['userRegistration.datenew.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="datenewInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="spouseoccupationId" value="#{label['userRegistration.spouseoccupation']}"
+	style="#{spouseoccupationInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="spouseoccupationInputId" value="#{userRegistration.spouseoccupation}" required="false" label="spouseoccupation" binding="#{spouseoccupationInputId}" requiredMessage="#{vm['userRegistration.spouseoccupation.required']}" validatorMessage="#{vm['userRegistration.spouseoccupation.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="spouseoccupationInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="sentpinId" value="#{label['userRegistration.sentpin']}"
+	style="#{sentpinInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="sentpinInputId" value="#{userRegistration.sentpin}" required="false" label="sentpin" binding="#{sentpinInputId}" requiredMessage="#{vm['userRegistration.sentpin.required']}" validatorMessage="#{vm['userRegistration.sentpin.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="sentpinInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="preparersnameId" value="#{label['userRegistration.preparersname']}"
+	style="#{preparersnameInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="preparersnameInputId" value="#{userRegistration.preparersname}" required="false" label="preparersname" binding="#{preparersnameInputId}" requiredMessage="#{vm['userRegistration.preparersname.required']}" validatorMessage="#{vm['userRegistration.preparersname.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="preparersnameInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="preparerssignId" value="#{label['userRegistration.preparerssign']}"
+	style="#{preparerssignInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="preparerssignInputId" value="#{userRegistration.preparerssign}" required="false" label="preparerssign" binding="#{preparerssignInputId}" requiredMessage="#{vm['userRegistration.preparerssign.required']}" validatorMessage="#{vm['userRegistration.preparerssign.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="preparerssignInputId" style="color:red"/><br/>	
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="datepreparerId" value="#{label['userRegistration.datepreparer']}"
+	style="#{datepreparerInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="datepreparerInputId" value="#{userRegistration.datepreparer}" required="false" label="datepreparer" binding="#{datepreparerInputId}" requiredMessage="#{vm['userRegistration.datepreparer.required']}" validatorMessage="#{vm['userRegistration.datepreparer.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="datepreparerInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="PSINId" value="#{label['userRegistration.PSIN']}"
+	style="#{PSINInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="PSINInputId" value="#{userRegistration.PSIN}" required="false" label="PSIN" binding="#{PSINInputId}" requiredMessage="#{vm['userRegistration.PSIN.required']}" validatorMessage="#{vm['userRegistration.PSIN.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="PSINInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="firmsnameId" value="#{label['userRegistration.firmsname']}"
+	style="#{firmsnameInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="firmsnameInputId" value="#{userRegistration.firmsname}" required="false" label="firmsname" binding="#{firmsnameInputId}" requiredMessage="#{vm['userRegistration.firmsname.required']}" validatorMessage="#{vm['userRegistration.firmsname.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="firmsnameInputId" style="color:red"/><br/>	
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="firmsEinId" value="#{label['userRegistration.firmsEin']}"
+	style="#{firmsEinInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="firmsEinInputId" value="#{userRegistration.firmsEin}" required="false" label="firmsEin" binding="#{firmsEinInputId}" requiredMessage="#{vm['userRegistration.firmsEin.required']}" validatorMessage="#{vm['userRegistration.firmsEin.invalid']}" >
+	<!--f:validateRegex pattern =  "^[0-9]+" /-->
+	</h:inputText>
+	<h:message for="firmsEinInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="firmaddressId" value="#{label['userRegistration.firmaddress']}"
+	style="#{firmaddressInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="firmaddressInputId" value="#{userRegistration.firmaddress}" required="false" label="firmaddress" binding="#{firmaddressInputId}" requiredMessage="#{vm['userRegistration.firmaddress.required']}" validatorMessage="#{vm['userRegistration.firmaddress.invalid']}" >
+	<!--f:validateRegex pattern =  "^[a-zA-Z ]+$" /-->
+	</h:inputText>
+	<h:message for="firmaddressInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td><h:outputLabel id="firmphoneId" value="#{label['userRegistration.firmphone']}"
+	style="#{firmphoneInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="firmphoneInputId" value="#{userRegistration.firmphone}" required="false" label="firmphone" binding="#{firmphoneInputId}" requiredMessage="#{vm['userRegistration.firmphone.required']}" validatorMessage="#{vm['userRegistration.firmphone.invalid']}" >
+	<!--f:validateRegex pattern =  "[0-9]+" /-->
+	</h:inputText>
+	<h:message for="firmphoneInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+
+
+
+<p></p><p></p><p></p><p></p>
+<br></br>
+<h:commandButton value="Submit" action="#{userRegistration.add}"/>
+<h:commandButton value="Save" action="#{userRegistration.add}"/>
+<h:commandButton value="Retrieve" action="#{userRegistration.retreive}"/>
+<h:commandButton value="Update" action="#{userRegistration.update}"/>
+
+
+<br></br>
+
+</table>
+
+
+</h:form>
+</f:view>
+    
+</h:body>
+</html>

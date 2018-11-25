@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<style type="text/css">
+
+/* CSS Document */
+
+* { margin:0 ; 
+	padding:0;
+	border:0;
+}
+
+h1 {
+	color: #070707;
+	font-size: 36px;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+}
+	
+h2 {
+	color: #0A0A0A;
+	font-size: xx-large;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	font-style: normal;
+	font-weight: 800;
+	text-decoration: underline;
+	text-align: center;
+
+ }
+	
+	
+#wrapper { width :1400px ; height:1200px;
+		   margin:20px auto ; 
+		   background-color:#FFFFFF ;
+		   
+}
+
+a { background-color:#08A31E ; 
+	display:block;
+	width:150px;
+	padding : 5px 20px;
+	text-decoration:none ;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-weight:bold;
+	border-bottom:1px #FCFCFC solid;
+	
+}
+
+#toolbar { 
+			float:left;
+			width:190px;
+			margin : 10px, 0px, 0px,0px ;
+			padding-top: none;
+			
+}
+
+
+a:link { color:#F1EEEE; }
+a:visited { color:#F1EEEE ; }
+a:active { color:#F1EEEE ; }
+a:hover { color:#FF0105 ; background-color:#087B07; }
+a:focus { color: #FF0105; }
+
+#banner { background-color:#4DA827 ;
+		padding : 5px;
+		
+		
+}
+
+body {
+	background-image: url("http://1-art.eu/images/backgrounds/vellum/vellum-plain-background-repeating.jpg");
+	background-repeat: repeat;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	padding: 0;
+}
+
+#footer { float:none;
+		  padding :5px 5px 0px 50px;
+		  border-top: 1px #000 dotted;
+		  color:#22D932;
+		  margin-top: 20px;
+		  border-bottom-left-radius:100px;
+		
+		  
+		  }
+
+#content {
+	width : 900px;
+	height : 750px;
+	padding : 10px 5px 10px 190px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size: 18px;
+}
+#forms {
+margin : 10px, 0px, 0px,10px ;
+height: 500px;
+}
+
+#forms a {
+	background-color:#000000 ; 
+	display : inline ;
+ 	list-style-type:none;
+	width: 120px;
+	margin:10px;
+	float: left;
+	} 
+
+#box {
+	background:#D1C1C1 none repeat scroll 0 0 ;
+	border-color:#E8D9D9;
+	border-width: 10 ;
+	border-style: solid;
+	
+	line-height:1.3em;
+	margin-top: 0px;
+	padding: 0;
+	width:1160px;
+}
+
+#box1 {
+	background: #F7F7F7 none repeat scroll 0 0;
+	border-color: #F5F3F3;
+	border-width: 0;
+	border-style: solid;
+	color: #121010;
+	font-size: 18px;
+	padding: 30px 14px 0;
+	width: 1130px;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+		 
+		
+}
+
+#box2 {
+	background:#D1C1C1 none repeat scroll 0 0 ;
+	border-color:#E8D9D9;
+	border-width: 10 ;
+	border-style: solid;
+	
+	line-height:1.3em;
+	margin:0;
+	padding: 0;
+	width:317px;
+	padding-top:10px;
+	width:1160px;
+	
+	
+}
+
+#box3 {
+	background: #F7F7F7 none repeat scroll 0 0;
+	border-color: #F5F3F3;
+	border-width: 0;
+	border-style: solid;
+	color: #262121;
+	font-size: 18px;
+	padding: 30px 14px 0;
+	width: 1130px;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+		 
+		
+}
+#form {
+	padding-left: 30px;
+	text-align: left;
+	font-size: 18px;
+}
+
+#formbackground {
+	background-color:#FFFFFF;
+
+#instruct{
+	float:right;
+}
+
+
+
+</style>
+    </h:head>
+<h:body>
+<!-- <h:graphicImage value="http://freebeacon.com/wp-content/uploads/2012/10/IRS-logo.png" width="288" height="83" align="center" /> -->
+
+         
+        
+        <div id ="banner"> 
+            <div id="logo" >
+            
+                <a href="index.jsp"><img src="//lh6.googleusercontent.com/-9tGTtbRe3lw/Uw0M4exukPI/AAAAAAAAA-k/i7pZ7ET5MXY/w431-h95-no/coollogo_com-17789161.png"></img></a>
+            </div>
+            
+  		</div>
+  <div id = "photos">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQcMppJYshYOIxq5rWoGjBhNeOApan1rJTuZS3RliRvCbVs31aj" width="1350" height="175"></img>
+        </div>
+
+<div id ="toolbar">
+        
+       
+        
+       
+       
+        
+        <a href="index.xhtml">Welcome </a> <a href="aboutus.xhtml">aboutus </a><a href="forms.xhtml"> Forms and Pubs  </a> 
+               
+               
+          <p></p>
+          <p></p>
+          
+              
+                          
+               
+</div>
+
+<div id="content">
+         <div id="box">
+           <h2>&nbsp;</h2>
+           <h2><span style="color: #E9181C"><em style="font-size: xx-large">Welcome to IRS </em></span></h2>
+         	  <p>&nbsp;</p>
+         	</div>
+         <div id="box1">
+           <p><strong><em>The&nbsp;Internal Revenue Service&nbsp;(IRS) is  the&nbsp;revenue service of the United States federal government. The agency is a bureau of the Department of the Treasury and is under the immediate direction of the commissioner of the Internal Revenue.&nbsp;</em></strong></p>
+           <p><em><strong>The IRS is Responsible for collecting taxes and the interpretation and enforcement of the internal Code.</strong></em></p>
+           <p>&nbsp;</p>
+           <p><span style="color: #161313"><em><strong>The IRS is headquartered in Washington, D.C. It is an expansive organization that services the taxation of all Americans. In 2006, the IRS processed about 133 million personal income tax returns and almost six million corporate income tax returns, bringing in trillions of dollars of tax revenue</strong></em></span><em><strong>.</strong></em></p>
+           <p>&nbsp;</p>
+           <p>&nbsp;</p>
+         </div>
+        
+        
+        <div id="box2">
+         	  <h2><strong><em style="color: #DD181B">Latest News</em></strong></h2>
+         	  <p>&nbsp;</p>
+        </div>
+         <div id="box3">
+             <p><span style="color: #292525"><strong><em style="color: #111010">IRS Criminal Investigation Division today  released its annual report</em></strong></span><em><strong><span style="color: #312A2A">.</span></strong></em></p>
+           <p>&nbsp;</p>
+           <p><em><strong>The  IRS has issued 15 percent more refunds in 2014 than at the same time last year.</strong></em></p>
+           <p>&nbsp;</p>
+           <p><em><strong>The  IRS issued its annual &ldquo;Dirty Dozen&rdquo; list of tax scams, reminding taxpayers to  use caution during tax season to protect themselves against a wide range of  schemes ranging from identity theft to return preparer fraud.</strong></em></p>
+           <p>&nbsp;</p>
+           <p><em><strong>Tax filings in 2014 are outpacing results from  the same time last year</strong></em></p>
+           <p>&nbsp;</p>
+           <p><em><strong>The IRS announced the selection of new members to serve on the nationwide Taxpayer Advocacy Panel, a federal advisory committee charged with providing taxpayer suggestions to improve IRS customer service.</strong></em></p>
+           <p>&nbsp;</p>
+         </div>
+       <div id="footer">
+       <strong>copyright - CreateWeb Technologies </strong></div>
+       </div>
+</h:body>
+</html>

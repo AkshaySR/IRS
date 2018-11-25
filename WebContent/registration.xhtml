@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+
+<h:head>
+	<title>Registration Form</title>
+	<style type="text/css">
+
+/* CSS Document */
+
+a { background-color:#08A31E ; 
+	display:block;
+	width:150px;
+	padding : 5px 20px;
+	text-decoration:none ;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-weight:bold;
+	border-bottom:1px #FCFCFC solid;
+	display:inline;
+}
+
+a:link { color:#F1EEEE; }
+a:visited { color:#F1EEEE ; }
+a:active { color:#F1EEEE ; }
+a:hover { color:#FF0105 ; background-color:#087B07; }
+a:focus {
+	color: #FF0105;
+	text-align: center;
+}
+
+h5 {
+	color:#F30C10;
+}
+
+</style>
+</h:head>
+
+<h:body>
+	<f:view>
+	<h:form>
+	<table>
+<div id ="banner"> 
+            <div id="logo" >
+            
+                <a href="index.xhtml"><img src="//lh6.googleusercontent.com/-9tGTtbRe3lw/Uw0M4exukPI/AAAAAAAAA-k/i7pZ7ET5MXY/w431-h95-no/coollogo_com-17789161.png" width="288" height="83"></img></a>
+            </div>
+            
+  		</div>
+
+
+
+
+        <div id = "photos">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQcMppJYshYOIxq5rWoGjBhNeOApan1rJTuZS3RliRvCbVs31aj" width="1350" height="175"></img>
+        </div>
+    
+        <div id ="toolbar">
+        
+       
+        
+       
+       
+        
+        <a href="index.xhtml">Welcome </a><a href="aboutus.xhtml">aboutus </a><a href="forms.xhtml">Forms and Pubs</a> 
+               
+               
+          <p></p>
+          <p></p>
+          
+              
+                          
+                <!-- <p><a href="information.jsp"><img src="http://claritygroupinc.files.wordpress.com/2012/06/bigstockphoto_information_20362351.jpg"width="158" height="136"></a>
+                <p><a href="aboutus.jsp"><img src="http://www.snehankit.com/images/about-us1.jpg"width="151" height="136"></a>        </p> -->
+</div>
+
+<h1> Registration for new user</h1>
+<tr>
+<td><h:outputLabel id="userNameOutputId" value="#{label['Registration.userName']}"
+	style="#{userNameInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="userNameInputId" value="#{Registration.userName}" required="true" label="UserName" binding="#{userNameInputId}" requiredMessage="#{vm['Registration.userName.required']}" validatorMessage="#{vm['Registration.userName.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z ]+$" />
+	</h:inputText>
+	<h:message for="userNameInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="firstNameOutputId" value="#{label['Registration.firstName']}"
+	style="#{firstNameInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="firstNameInputId" value="#{Registration.firstName}" required="true" label="firstName" binding="#{firstNameInputId}" requiredMessage="#{vm['Registration.firstName.required']}" validatorMessage="#{vm['Registration.firstName.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z ]+$" />
+	</h:inputText>
+	<h:message for="firstNameInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="lastNameOutputId" value="#{label['Registration.lastName']}"
+	style="#{lastNameInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="lastNameInputId" value="#{Registration.lastName}" required="true" label="lastName" binding="#{lastNameInputId}" requiredMessage="#{vm['Registration.lastName.required']}" validatorMessage="#{vm['Registration.lastName.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z ]+$" />
+	</h:inputText>
+	<h:message for="lastNameInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="passwordOutputId" value="#{label['Registration.password']}"
+	style="#{passwordInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="passwordInputId" value="#{Registration.password}" required="true" label="password" binding="#{passwordInputId}" requiredMessage="#{vm['Registration.password.required']}" validatorMessage="#{vm['Registration.password.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z ]+$" />
+	</h:inputText>
+	<h:message for="passwordInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+
+<tr>
+<td><h:outputLabel id="mailidOutputId" value="#{label['Registration.mailid']}"
+	style="#{mailidInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="mailidInputId" value="#{Registration.mailid}" required="true" label="mailid" binding="#{mailidInputId}" requiredMessage="#{vm['Registration.mailid.required']}" validatorMessage="#{vm['Registration.mailid.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z0-9@. ]+$" />
+	</h:inputText>
+	<h:message for="mailidInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+
+<tr>
+<td><h:outputLabel id="DOBOutputId" value="#{label['Registration.DOB']}"
+	style="#{DOBInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="DOBInputId" value="#{Registration.DOB}" required="true" label="DOB" binding="#{DOBInputId}" requiredMessage="#{vm['Registration.DOB.required']}" validatorMessage="#{vm['Registration.DOB.invalid']}" >
+	<f:validateRegex pattern =  "[0-9]+" />
+	</h:inputText>
+	<h:message for="DOBInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="address1OutputId" value="#{label['Registration.address1']}"
+	style="#{address1InputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="address1InputId" value="#{Registration.address1}" required="true" label="address1" binding="#{address1InputId}" requiredMessage="#{vm['Registration.address1.required']}" validatorMessage="#{vm['Registration.address1.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z ]+$" />
+	</h:inputText>
+	<h:message for="address1InputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="phoneNoOutputId" value="#{label['Registration.phoneNo']}"
+	style="#{phoneNoInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="phoneNoInputId" value="#{Registration.phoneNo}" required="true" label="PhoneNo" binding="#{phoneNoInputId}" requiredMessage="#{vm['Registration.phoneNo.required']}" validatorMessage="#{vm['Registration.phoneNo.invalid']}" >
+	<f:validateRegex pattern =  "^\\d{10}$" />
+	</h:inputText>
+	<h:message for="phoneNoInputId" style="color:red"/><br/>
+</td>
+</tr>
+<tr>
+<td>
+
+<h:outputLabel id="city123OutputId" value="#{label['Registration.city123']}"
+	style="#{city123InputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="city123InputId" value="#{Registration.city123}" required="true" label="city123" binding="#{city123InputId}" requiredMessage="#{vm['Registration.city123.required']}" validatorMessage="#{vm['Registration.city123.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z ]+$" />
+	</h:inputText>
+	<h:message for="city123InputId" style="color:red"/><br/>
+</td>
+</tr>
+
+
+<tr>
+<td><h:outputLabel id="stateOutputId" value="#{label['Registration.state']}"
+	style="#{stateInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="stateInputId" value="#{Registration.state}" required="true" label="State" binding="#{stateInputId}" requiredMessage="#{vm['Registration.state.required']}" validatorMessage="#{vm['Registration.state.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z ]+$" />
+	</h:inputText>
+	<h:message for="stateInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<tr>
+<td><h:outputLabel id="countryOutputId" value="#{label['Registration.country']}"
+	style="#{countryInputId.valid ? '' : 'color:red'}" />
+	<h:inputText id="countryInputId" value="#{Registration.country}" required="true" label="Country" binding="#{countryInputId}" requiredMessage="#{vm['Registration.country.required']}" validatorMessage="#{vm['Registration.country.invalid']}" >
+	<f:validateRegex pattern =  "^[a-zA-Z ]+$" />
+	</h:inputText>
+	<h:message for="countryInputId" style="color:red"/><br/>
+</td>
+</tr>
+
+<h:commandButton value="REGISTER" action="#{Registration.add1}"/>
+
+<tr>
+<td><h:outputLink value="login.xhtml">SignIn</h:outputLink></td>
+</tr> 
+</table>
+</h:form>
+</f:view>
+</h:body>
+
+</html>

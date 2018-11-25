@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+    version="2.1">
+
+<managed-bean>
+<managed-bean-name>user</managed-bean-name>
+<managed-bean-class>jdbcpack.User</managed-bean-class>
+<managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+<managed-bean-name>Registration</managed-bean-name>
+<managed-bean-class>aks.jdbc.user1</managed-bean-class>
+<managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+<navigation-rule>
+    <from-view-id>/login.xhtml</from-view-id>
+    <navigation-case>
+        <from-action>#{login.login}</from-action>
+        <to-view-id>/insert.xhtml</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>/login.xhtml</from-view-id>
+    <navigation-case>
+        <from-action>#{login.add1}</from-action>
+        <to-view-id>/registration.xhtml</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+
+
+<navigation-rule>
+<!-- <description>add user</description>
+<from-view-id>/insert.xhtml</from-view-id> -->
+
+<description>add user</description>
+<from-view-id>/registration.xhtml</from-view-id>
+
+<navigation-case>
+<from-action>#{userRegistration.add}</from-action>
+<from-outcome>output</from-outcome>
+<to-view-id>/output.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+<from-action>#{userRegistration.add}</from-action>
+<from-outcome>invalid</from-outcome>
+<to-view-id>/invalid.xhtml</to-view-id>
+</navigation-case>
+</navigation-rule>
+
+
+
+<application>
+<resource-bundle> 
+<base-name> aks.jdbc.validationMessages</base-name>
+<var>vm</var>
+</resource-bundle>
+<resource-bundle> 
+<base-name> aks.jdbc.labels</base-name>
+<var>label</var>
+</resource-bundle>
+</application>
+
+</faces-config>
